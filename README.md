@@ -21,19 +21,19 @@ Apply the theme after creating the ggplot object:
 
 For continuous data, the theme offers a range of gradient options, in line with default ggplot options for continuous scales:
 
-	- Default: *scale_fill_continuous() / scale_colo(u)r_continuous() / scale_fill_gradient() / scale_colo(u)r_gradient()* 
-		- Gradient from a lighter ("independence light 4") to a darker ("glaucous dark 3") blue-grey shade of the palette
-	- Diverging gradient: *scale_fill_gradient2() / scale_colo(u)r_gradient2()*
-		- Gradient from a blue-ish ("glaucous dark 2") to a red-ish ("shimmer dark 2") shade of the palette
-	- n-numbered gradient: *scale_fill_gradientn() / scale_colo(u)r_gradientn()*
-		- Gradient using up to 6 shades of the palette, depending on the amount of categories on the x- or y-axis
+- Default: *scale_fill_continuous() / scale_colo(u)r_continuous() / scale_fill_gradient() / scale_colo(u)r_gradient()* 
+	- Gradient from a lighter ("independence light 4") to a darker ("glaucous dark 3") blue-grey shade of the palette
+- Diverging gradient: *scale_fill_gradient2() / scale_colo(u)r_gradient2()*
+	- Gradient from a blue-ish ("glaucous dark 2") to a red-ish ("shimmer dark 2") shade of the palette
+- n-numbered gradient: *scale_fill_gradientn() / scale_colo(u)r_gradientn()*
+	- Gradient using up to 6 shades of the palette, depending on the amount of categories on the x- or y-axis
 
 ### Manually selecting colors from the palette
 
 The package contains two convenience functions for manual color selection:
 
-	- *display_colors()*: Returns a plot that shows all colors in the palette together with their name and Hex color code
-	- *list_colors()*: Returns a tibble of the color names and Hex color codes. The latter can be supplied as values for manual color selections
+- *display_colors()*: Returns a plot that shows all colors in the palette together with their name and Hex color code
+- *list_colors()*: Returns a tibble of the color names and Hex color codes. The latter can be supplied as values for manual color selections
 	
 **Example**:
 
