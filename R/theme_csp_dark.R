@@ -1,5 +1,49 @@
-#' ggplot2 dark theme for the "Cognitive Science of Pragmatics" Research Group, Department of Linguistics, University of Tübingen, Germany.
-#' Chair: Prof. Dr. Michael Franke
+# ##################################################
+# ## CSP-colors
+# ##################################################
+# CSP_colors = c(
+#   "#7581B3", "#99C2C2", "#C65353", "#E2BA78", "#5C7457", "#575463",
+#            "#B0B7D4", "#66A3A3", "#DB9494", "#D49735", "#9BB096", "#D4D3D9",
+#            "#414C76", "#993333"
+# )
+#
+# csp_pal <- function() {
+#   scales::manual_pal(CSP_colors)
+# }
+# csp_pal_cont <- function() {
+#   scales::gradient_n_pal(CSP_colors[c(13,12)])
+# }
+# csp_pal_diverg <- function() {
+#   scales::gradient_n_pal(CSP_colors[c(13,12,14)])
+# }
+# csp_pal_cont_n <- function() {
+#   scales::gradient_n_pal(CSP_colors[c(13,1,7,12,2,8)])
+# }
+#
+# scale_color_discrete <- function(...) { discrete_scale("colour", "csp", csp_pal(), ...) }
+# scale_colour_discrete <- function(...) { discrete_scale("colour", "csp", csp_pal(), ...) }
+# scale_fill_discrete <- function(...) { discrete_scale("fill", "csp", csp_pal(), ...) }
+#
+# scale_color_continuous <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
+# scale_colour_continuous <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
+# scale_fill_continuous <- function(...) { continuous_scale("fill", "csp", csp_pal_cont(), ...) }
+#
+# scale_color_gradient <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
+# scale_colour_gradient <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
+# scale_fill_gradient <- function(...) { continuous_scale("fill", "csp", csp_pal_cont(), ...) }
+#
+# scale_color_gradient2 <- function(...) { continuous_scale("colour", "csp", csp_pal_diverg(), ...) }
+# scale_colour_gradient2 <- function(...) { continuous_scale("colour", "csp", csp_pal_diverg(), ...) }
+# scale_fill_gradient2 <- function(...) { continuous_scale("fill", "csp", csp_pal_diverg(), ...) }
+#
+# scale_color_gradientn <- function(...) { continuous_scale("colour", "csp", csp_pal_cont_n(), ...) }
+# scale_colour_gradientn <- function(...) { continuous_scale("colour", "csp", csp_pal_cont_n(), ...) }
+# scale_fill_gradientn <- function(...) { continuous_scale("fill", "csp", csp_pal_cont_n(), ...) }
+
+#' dark version of the CSP ggplot2 theme
+#'
+#' Theme for the "Cognitive Science of Pragmatics" Research Group, Department of Linguistics, University of Tübingen, Germany.
+#' Based on the Aida theme (https://github.com/michael-franke/aida-package)
 #'
 #' @param title.size title element size in pts
 #' @param text.size text element size in pts
@@ -10,56 +54,14 @@
 #'
 #' @import ggplot2
 #' @import scales
+#' @returns ggplot theme
 #' @export
-
-##################################################
-## CSP-colors
-##################################################
-CSP_colors = c(
-  "#7581B3", "#99C2C2", "#C65353", "#E2BA78", "#5C7457", "#575463",
-           "#B0B7D4", "#66A3A3", "#DB9494", "#D49735", "#9BB096", "#D4D3D9",
-           "#414C76", "#993333"
-)
-
-csp_pal <- function() {
-  scales::manual_pal(CSP_colors)
-}
-csp_pal_cont <- function() {
-  scales::gradient_n_pal(CSP_colors[c(13,12)])
-}
-csp_pal_diverg <- function() {
-  scales::gradient_n_pal(CSP_colors[c(13,12,14)])
-}
-csp_pal_cont_n <- function() {
-  scales::gradient_n_pal(CSP_colors[c(13,1,7,12,2,8)])
-}
-
-scale_color_discrete <- function(...) { discrete_scale("colour", "csp", csp_pal(), ...) }
-scale_colour_discrete <- function(...) { discrete_scale("colour", "csp", csp_pal(), ...) }
-scale_fill_discrete <- function(...) { discrete_scale("fill", "csp", csp_pal(), ...) }
-
-scale_color_continuous <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
-scale_colour_continuous <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
-scale_fill_continuous <- function(...) { continuous_scale("fill", "csp", csp_pal_cont(), ...) }
-
-scale_color_gradient <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
-scale_colour_gradient <- function(...) { continuous_scale("colour", "csp", csp_pal_cont(), ...) }
-scale_fill_gradient <- function(...) { continuous_scale("fill", "csp", csp_pal_cont(), ...) }
-
-scale_color_gradient2 <- function(...) { continuous_scale("colour", "csp", csp_pal_diverg(), ...) }
-scale_colour_gradient2 <- function(...) { continuous_scale("colour", "csp", csp_pal_diverg(), ...) }
-scale_fill_gradient2 <- function(...) { continuous_scale("fill", "csp", csp_pal_diverg(), ...) }
-
-scale_color_gradientn <- function(...) { continuous_scale("colour", "csp", csp_pal_cont_n(), ...) }
-scale_colour_gradientn <- function(...) { continuous_scale("colour", "csp", csp_pal_cont_n(), ...) }
-scale_fill_gradientn <- function(...) { continuous_scale("fill", "csp", csp_pal_cont_n(), ...) }
-
-
 #---------------------------------------------------------------
 theme_csp_dark <- function(title.size = 16, text.size = 14, legend.position = "top",
                       show.axis = FALSE, show.grid = TRUE,
                       plot.margin = c(.2, .1, .2, .1)){
-  # baseline
+
+  ############ baseline plot style #####################
   layout <- theme_classic()
   layout <- layout + theme(text = element_text(size = text.size),
                            title = element_text(size = title.size,

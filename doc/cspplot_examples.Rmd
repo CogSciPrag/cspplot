@@ -1,0 +1,148 @@
+---
+title: "cspplot_examples"
+author: "Juliane Schwab"
+date: "2023-01-05"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+#----------------------------------------load required packages---------------------------------
+library(ggplot2)
+library(cspplot)
+library(geometry)
+library(ordinal)
+```
+
+```{r}
+
+c = c("x1","x2","x3","x4")
+s = c(1:4)
+cycle=c(1)
+
+test_discrete<-data.frame(c,s,cycle)
+
+pd = position_dodge2(width = 0.4, padding = 0.1) #dodge other points
+```
+
+```{r}
+###################################################################
+################# Example plots for discrete scales  ##############
+###################################################################
+
+#---------------point-line plot-------------------------------------
+plot_point_line<-ggplot(test_discrete, aes(y = s,x = c, color = c))+
+  theme_csp()+
+  geom_line(aes(group=cycle), color="grey75", linetype = 1, position=pd)+
+  geom_point(aes(size=s), alpha = 0.7,  position=pd)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  theme(legend.position = "none")
+
+plot_point_line
+```
+
+```{r}
+#---------------error bar plot-------------------------------------
+plot_errorbar<-ggplot(test_discrete, aes(y = s,x = c, color = c))+
+  theme_csp()+
+  geom_errorbar(aes(ymin = s - sd(s), ymax = s + sd(s)))+
+  geom_point(position=pd)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  theme(legend.position = "none")
+
+plot_errorbar
+```
+
+```{r}
+#--------------bar plot--------------------
+plot_bars1<-ggplot(test_discrete, aes(y = s,x = c, fill = c))+
+  theme_csp()+
+  geom_bar(stat ="identity", width=0.8)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  scale_y_continuous(limits=c(0,5),breaks=c(0,2,4))+
+  theme(legend.position = "none")
+
+plot_bars1
+```
+
+```{r}
+###################################################################
+############### Example plots for continuous scales  ##############
+###################################################################
+
+i = c(1:4)
+j = c(1:4)
+k=c(1)
+
+test_continuous<-data.frame(i,j,k)
+
+#--------------gradient scale-----------------------
+plot_bars2<-ggplot(test_continuous, aes(y = j,x = i, fill = i))+
+  theme_csp()+
+  geom_bar(stat ="identity", width=0.8)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  scale_y_continuous(limits=c(0,5),breaks=c(0,2,4))+
+  theme(legend.position = "none")
+
+plot_bars2
+```
+
+```{r}
+#--------------diverging gradient-----------------------
+
+plot_bars3<-ggplot(test_continuous, aes(y = j,x = i, fill = i))+
+  theme_csp()+
+  geom_bar(stat ="identity", width=0.8)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  scale_fill_gradient2()+
+  scale_y_continuous(limits=c(0,5),breaks=c(0,2,4))+
+  theme(legend.position = "none")
+
+plot_bars3
+```
+
+```{r}
+#--------------n-numbered gradient-----------------------
+
+plot_bars4<-ggplot(test_continuous, aes(y = j,x = i, fill = i))+
+  theme_csp()+
+  geom_bar(stat ="identity", width=0.8)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  scale_fill_gradientn()+
+  scale_y_continuous(limits=c(0,5),breaks=c(0,2,4))+
+  theme(legend.position = "none")
+
+plot_bars4
+```
+
+```{r}
+###################################################################
+########## Example plot with manual color selection  ##############
+###################################################################
+
+#function returning a plot to show the colors with their names
+display_colors()
+```
+
+```{r}
+#function returning a tibble of the color names and number
+list_colors()
+```
+
+```{r}
+palette<-list_colors()[,"hex", drop = TRUE]
+
+#--------------bar plot--------------------
+plot_bars5<-ggplot(test_discrete, aes(y = s,x = c, fill = c))+
+  theme_csp()+
+  geom_bar(stat ="identity", width=0.8)+
+  labs(x = "outcomes x", y = "s(x)", title = "")+
+  scale_y_continuous(limits=c(0,5),breaks=c(0,2,4))+
+  scale_fill_manual(values = c(palette[11:14]))+
+  theme(legend.position = "none")
+
+plot_bars5
+
+```
+
