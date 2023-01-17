@@ -2,6 +2,12 @@
 
 R package containing two versions of ggplot themes (light and dark) for the CSP group.
 
+## Installation
+
+In RStudio, run:
+
+	devtools::install_github("CogSciPrag/cspplot")
+
 ## Usage
 
 The package should be imported after ggplot2, as it overwrites its default color scales:
