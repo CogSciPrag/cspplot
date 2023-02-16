@@ -11,12 +11,12 @@
 ##################################################
 list_colors<-function(){
   CSP_colors = c(
-    "#7581B3", "#99C2C2", "#C65353", "#E2BA78", "#5C7457", "#575463",
+    "#7581B3", "#C65353", "#E2BA78", "#5C7457", "#99C2C2", "#575463",
              "#B0B7D4", "#66A3A3", "#DB9494", "#D49735", "#9BB096", "#D4D3D9",
              "#414C76", "#993333"
   )
 
-  CSP_color_names = c("glaucous", "opal", "shimmer", "crayola", "fern", "independence",
+  CSP_color_names = c("glaucous", "shimmer", "crayola", "fern", "opal", "independence",
                       "glaucous light 2", "opal dark 2", "shimmer light 2", "crayola dark 2", "fern light 3", "independence light 4",
                       "glaucous dark 3", "shimmer dark 2"
   )

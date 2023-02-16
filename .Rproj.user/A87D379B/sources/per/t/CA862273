@@ -3,7 +3,7 @@
     "path": "C:/Users/julia/AppData/Local/R/own-packages/cspplot/R/theme_csp.R",
     "project_path": "R/theme_csp.R",
     "type": "r_source",
-    "hash": "3922246350",
+    "hash": "443837098",
     "contents": "",
     "dirty": false,
     "created": 1672818413350.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "8,26",
+        "cursorPosition": "14,1",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1673250971,
+    "lastKnownWriteTime": 1676542310,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1673250971,
+    "last_content_update": 1676542310398,
     "read_only": false,
     "read_only_alternatives": []
 }
