@@ -14,10 +14,10 @@ csp_pal <- function() {
   scales::manual_pal(CSP_colors)
 }
 csp_pal_cont <- function() {
-  scales::gradient_n_pal(CSP_colors[c(13,12)])
+  scales::gradient_n_pal(c("#EEEEEE", CSP_colors[2]))
 }
 csp_pal_diverg <- function() {
-  scales::gradient_n_pal(CSP_colors[c(13,12,14)])
+  scales::gradient_n_pal(c(CSP_colors[13],"#EEEEEE",CSP_colors[14]))
 }
 csp_pal_cont_n <- function() {
   scales::gradient_n_pal(CSP_colors[c(13,1,7,12,2,8)])
